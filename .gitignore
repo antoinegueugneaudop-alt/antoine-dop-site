@@ -1,0 +1,12 @@
+# macOS / local
+.DS_Store
+__MACOSX/
+
+# large video files: use Vimeo or external hosting
+*.mov
+*.mp4
+*.m4v
+
+# local tools
+node_modules/
+.vercel/
