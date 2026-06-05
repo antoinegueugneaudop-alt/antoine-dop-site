@@ -877,6 +877,10 @@ main { display: block; }
   gap: 24px;
 }
 
+.case-media-grid.two-up {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .case-media-grid .media,
 .case-wide-media .media {
   aspect-ratio: 2.1 / 1;
@@ -986,6 +990,7 @@ main { display: block; }
   .case-sequence { grid-template-columns: 1fr; }
   .case-method, .case-copy-block, .case-value-grid { grid-template-columns: repeat(2, 1fr); }
   .case-media-grid { grid-template-columns: 1fr; }
+  .case-media-grid.two-up { grid-template-columns: 1fr; }
   .case-visual-sequence { grid-template-columns: repeat(2, 1fr); }
 }
 
