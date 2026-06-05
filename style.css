@@ -860,6 +860,14 @@ main { display: block; }
   text-transform: uppercase;
 }
 
+.case-sequence-card p {
+  margin: 7px 0 0;
+  max-width: 360px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
 .case-value-grid {
   padding-bottom: clamp(64px, 6vw, 90px);
   display: grid;
