@@ -2,6 +2,18 @@
 
 You are working on the premium portfolio website for Antoine Gueugneau, Director of Photography.
 
+## Operating mode
+
+Work autonomously and keep moving. The goal is to make the site shippable quickly.
+
+- Do not stop after one tiny fix if there are obvious next improvements in the same scope.
+- Group safe visual/code polish into small but meaningful batches.
+- Commit completed work and leave the worktree clean.
+- Open PRs only when the platform requires it or when the change is substantial.
+- If a PR is opened, continue with the next safe task unless blocked by a required user approval.
+- Ask the user only for high-impact creative choices: changing image selections, changing project order, replacing copy, or changing the Visual Preparation hierarchy.
+- For safe implementation work, proceed without asking: removing dead CSS, responsive fixes, spacing/rhythm polish, broken links, modal/player fixes, accessibility labels, HTML cleanup, and performance improvements.
+
 ## Absolute rules
 
 - Site language: English only.
@@ -78,9 +90,11 @@ Contact:
 - Email: antoinegueugneau.dop@gmail.com
 - Links: Vimeo, IMDb, LinkedIn, Instagram.
 
-## Approval workflow
+## Autonomous backlog priority
 
-- Work in small, reviewable steps.
-- Prefer opening a pull request or producing a clear diff before merging important visual changes.
-- Ask for approval before changing hero image, Selected Work image choices, project order, copy, or Visual Preparation hierarchy.
-- Safe small fixes may be committed directly: broken links, spelling, responsive spacing, accessibility labels, and modal/player fixes.
+1. Remove obsolete/dead hero overlay CSS and verify the hero has no overlay text.
+2. Improve responsive behavior on desktop, tablet and mobile without changing image choices.
+3. Check all internal links and page paths.
+4. Harmonize spacing rhythm across Home, Work pages and Visual Preparation pages.
+5. Improve accessibility labels and focus states.
+6. Keep the site deployable as a static site from the repository root.
