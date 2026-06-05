@@ -74,31 +74,6 @@ img, video { display: block; max-width: 100%; }
   object-fit: cover;
 }
 
-.hero-title {
-  position: absolute;
-  left: 6.1%;
-  top: 31.5%;
-  color: rgba(12, 12, 12, .28);
-}
-
-.hero-title h1 {
-  margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(18px, 1.9vw, 30px);
-  line-height: .95;
-  font-weight: 400;
-  letter-spacing: -.035em;
-}
-
-.hero-title p {
-  margin: 4px 0 0;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(10px, .72vw, 13px);
-  line-height: 1;
-  letter-spacing: -.005em;
-  color: rgba(12, 12, 12, .30);
-}
-
 .under-hero {
   max-width: var(--max);
   margin: 0 auto;
@@ -762,7 +737,6 @@ img, video { display: block; max-width: 100%; }
   }
 
   .hero { padding: 0; }
-  .hero-title { left: 7%; top: 28%; }
   .section, .under-hero, .page-title-block, .vp-grid, .case-hero, .case-image, .case-sequence, .case-download, .work-page-hero, .work-large, .work-gallery {
     padding-left: 24px;
     padding-right: 24px;
@@ -797,7 +771,6 @@ a:focus-visible, button:focus-visible { outline: 1px solid #111; outline-offset:
 
 @media (max-width: 720px) {
   .hero-image { aspect-ratio: 1.35 / 1; }
-  .hero-title { top: 18%; }
   .under-hero { padding-top: 34px; padding-bottom: 72px; }
   .contact-links { font-size: clamp(22px, 7.5vw, 32px); }
 }
