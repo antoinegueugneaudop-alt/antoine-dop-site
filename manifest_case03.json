@@ -1,0 +1,18 @@
+{
+  "case": "Case 03",
+  "slug": "case03-windshield-vfx-driving-sequence",
+  "title": "Windshield VFX and driving sequence",
+  "subtitle": "Title sequence / Traffic infractions",
+  "core_production_idea": "A clear proof of concept before committing to the shoot.",
+  "method": "Motorcycle plates → car interior integration → windshield infraction graphics",
+  "validated_assets": {
+    "hero": "01-hero-windshield-infraction-red-light.png",
+    "source_plate_red_light_main": "02-source-clean-moto-plate-red-light-main.png",
+    "source_plate_lexus_lane": "03-source-clean-moto-plate-lexus-lane.png",
+    "source_plate_following_car": "04-source-clean-moto-plate-red-light-following-car.png",
+    "car_interior_integration_base": "05-car-interior-integration-base.png",
+    "graphic_language_line_crossing": "06-graphic-language-line-crossing.png",
+    "final_selected_direction": "07-final-windshield-vfx-direction.png",
+    "contact_sheet": "contact-sheet-case03.jpg"
+  }
+}
