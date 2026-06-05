@@ -1,0 +1,19 @@
+{
+  "case": "Case 04",
+  "slug": "case04-rapid-action-visualization",
+  "title": "Rapid action visualization",
+  "subtitle": "Operational storyboard / Parking sequence",
+  "core_production_idea": "A clear action roadmap before committing crew, vehicles and safety time.",
+  "method": "Breakdown → real parking geography → operational storyboard",
+  "asset_folder": "assets/visual_preparation/case04-rapid-action-visualization/",
+  "validated_selection": {
+    "hero": "01-hero-operational-storyboard-page-01.png",
+    "scouting_real_location": "02-scouting-real-parking-wide.jpg",
+    "scouting_depth_axis": "03-scouting-parking-depth-axis-van.jpg",
+    "source_breakdown": "04-source-shotlist-parking-sequence.jpg",
+    "rehearsal_action_path": "05-rehearsal-walkthrough-action-path.jpg",
+    "final_storyboard_page_02": "06-final-operational-storyboard-page-02.png",
+    "reserve_only": "07-reserve-sniper-parking-storyboard.jpg",
+    "contact_sheet": "contact-sheet-case04.jpg"
+  }
+}
