@@ -137,8 +137,8 @@
   </section>
 
 
-  <div class="video-modal" id="videoModal" aria-hidden="true">
-    <button class="modal-close" type="button" data-close-modal>Close</button>
+  <div class="video-modal" id="videoModal" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Showreel video">
+    <button class="modal-close" type="button" data-close-modal aria-label="Close video">Close</button>
     <div class="modal-inner">
       <div class="modal-frame" id="modalFrame"></div>
     </div>
@@ -148,17 +148,21 @@
   <script>
     const modal = document.getElementById('videoModal');
     const frame = document.getElementById('modalFrame');
+    let lastFocusedElement = null;
     function openVideo(url) {
-      frame.innerHTML = '<iframe src="' + url + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+      lastFocusedElement = document.activeElement;
+      frame.innerHTML = '<iframe src="' + url + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Antoine Gueugneau showreel"></iframe>';
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('modal-open');
+      document.querySelector('[data-close-modal]').focus();
     }
     function closeVideo() {
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
       frame.innerHTML = '';
+      lastFocusedElement?.focus();
     }
     document.querySelectorAll('[data-video]').forEach(el => {
       el.addEventListener('click', (event) => {
