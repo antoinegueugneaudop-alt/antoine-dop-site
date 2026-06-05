@@ -18,6 +18,7 @@ You are working on the premium portfolio website for Antoine Gueugneau, Director
 - Quiet typography, strong image rhythm, generous breathing space.
 - No technical/descriptive labels visible under work cards.
 - Copy must be short, precise and premium.
+- When an image is strong enough, let it breathe: do not add unnecessary text overlays.
 
 ## Home structure
 
@@ -32,9 +33,13 @@ You are working on the premium portfolio website for Antoine Gueugneau, Director
 
 Hero:
 - Use the hotel / pool / sky / architecture image.
-- Text inside the image must remain discreet, like a signature in the sky:
-  - ANTOINE GUEUGNEAU
-  - Director of Photography
+- Do not write Antoine Gueugneau inside the hero image.
+- Keep the name only in the header / navigation and footer.
+- The hero image should remain clean, quiet and image-led.
+
+Under-hero:
+- Left: “A cinematographer’s eye, extended into preparation.”
+- Right: “Selected cinematography work across series and feature films.”
 
 Selected Work order:
 1. All Those Things We Never Said
@@ -72,3 +77,10 @@ Contact:
 - Keep the validated white editorial Contact block.
 - Email: antoinegueugneau.dop@gmail.com
 - Links: Vimeo, IMDb, LinkedIn, Instagram.
+
+## Approval workflow
+
+- Work in small, reviewable steps.
+- Prefer opening a pull request or producing a clear diff before merging important visual changes.
+- Ask for approval before changing hero image, Selected Work image choices, project order, copy, or Visual Preparation hierarchy.
+- Safe small fixes may be committed directly: broken links, spelling, responsive spacing, accessibility labels, and modal/player fixes.
