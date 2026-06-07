@@ -20,7 +20,11 @@
 
   <section class="hero">
     <div class="hero-image">
-      <img src="assets/home/hero_hotel_piscine_ciel_architecture_v10_final.jpg" alt="Hotel pool sky architecture hero" />
+      <img src="assets/home/hero_hotel_piscine_ciel_architecture_real_cropped.jpg" alt="Hotel pool sky architecture hero" />
+      <div class="hero-title" aria-label="Antoine Gueugneau, Director of Photography">
+        <h1>ANTOINE<br>GUEUGNEAU</h1>
+        <p>Director of Photography</p>
+      </div>
     </div>
   </section>
 
@@ -73,15 +77,15 @@
 
   <section id="showreel" class="section">
     <h2 class="section-kicker">Showreel</h2>
-    <a class="showreel-link" href="https://vimeo.com/816328344" data-video="https://player.vimeo.com/video/816328344?autoplay=1&title=0&byline=0&portrait=0">
+    <a class="showreel-link" href="https://vimeo.com/816328344" data-video="https://player.vimeo.com/video/816328344?autoplay=1&title=0&byline=0&portrait=0" aria-label="Play main showreel">
       <div class="showreel-image">
         <img src="assets/home/showreel_main_2-1.jpg" alt="Showreel" />
       </div>
       <div class="play-overlay" aria-hidden="true"><div class="play-circle">▶</div></div>
     </a>
     <div class="buttons">
-      <a class="button primary" href="https://vimeo.com/816328344" data-video="https://player.vimeo.com/video/816328344?autoplay=1&title=0&byline=0&portrait=0">Play Main Reel</a>
-      <a class="button" href="https://vimeo.com/922015635?fl=pl&fe=sh" data-video="https://player.vimeo.com/video/922015635?autoplay=1&title=0&byline=0&portrait=0">Second Reel</a>
+      <a class="button primary" href="https://vimeo.com/816328344" data-video="https://player.vimeo.com/video/816328344?autoplay=1&title=0&byline=0&portrait=0" aria-label="Play main showreel">Play Main Reel</a>
+      <a class="button" href="https://vimeo.com/922015635?fl=pl&fe=sh" data-video="https://player.vimeo.com/video/922015635?autoplay=1&title=0&byline=0&portrait=0" aria-label="Play second showreel">Second Reel</a>
       <a class="button" href="https://vimeo.com/user6050105" target="_blank" rel="noopener">More on Vimeo</a>
     </div>
   </section>
@@ -137,8 +141,8 @@
   </section>
 
 
-  <div class="video-modal" id="videoModal" aria-hidden="true">
-    <button class="modal-close" type="button" data-close-modal>Close</button>
+  <div class="video-modal" id="videoModal" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Showreel video">
+    <button class="modal-close" type="button" data-close-modal aria-label="Close video">Close</button>
     <div class="modal-inner">
       <div class="modal-frame" id="modalFrame"></div>
     </div>
@@ -148,17 +152,21 @@
   <script>
     const modal = document.getElementById('videoModal');
     const frame = document.getElementById('modalFrame');
+    let lastFocusedElement = null;
     function openVideo(url) {
-      frame.innerHTML = '<iframe src="' + url + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+      lastFocusedElement = document.activeElement;
+      frame.innerHTML = '<iframe src="' + url + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Antoine Gueugneau showreel"></iframe>';
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('modal-open');
+      document.querySelector('[data-close-modal]').focus();
     }
     function closeVideo() {
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
       frame.innerHTML = '';
+      lastFocusedElement?.focus();
     }
     document.querySelectorAll('[data-video]').forEach(el => {
       el.addEventListener('click', (event) => {
