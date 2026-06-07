@@ -1,0 +1,5 @@
+{
+  "framework": null,
+  "buildCommand": "rm -rf dist && mkdir dist && cp -R index.html style.css case04.css assets visual-preparation*.html work-*.html dist/ && cp -R public/* dist/ 2>/dev/null || true",
+  "outputDirectory": "dist"
+}
