@@ -1,54 +1,81 @@
-.case-copy-block,
-.case-method,
+.case04-page .case-image {
+  margin-bottom: clamp(42px, 4.5vw, 64px);
+}
+
+.case04-statement,
+.case04-brief,
+.case04-section,
 .production-gain,
 .case-media-grid,
 .case-wide-media {
   max-width: var(--max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 58px;
-  padding-right: 58px;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 
-.case-copy-block,
-.case-method,
-.production-gain {
-  display: grid;
-  grid-template-columns: .34fr 1fr;
-  gap: 58px;
-  align-items: start;
-  padding-top: 22px;
-  padding-bottom: 58px;
-  border-top: 1px solid var(--line);
+.case04-statement {
+  padding-bottom: clamp(58px, 6vw, 88px);
 }
 
-.case-copy-block h2,
-.case-method h2,
-.production-gain h2 {
-  margin: 0 0 16px;
-  max-width: 860px;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(30px, 3.2vw, 54px);
-  line-height: 1.02;
-  letter-spacing: -.055em;
-  font-weight: 400;
-}
-
-.case-copy-block p,
-.case-method p,
-.production-gain p {
+.case04-statement h2 {
+  max-width: 960px;
   margin: 0;
-  max-width: 720px;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.55;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(42px, 5vw, 84px);
+  line-height: .96;
+  letter-spacing: -.06em;
+}
+
+.case04-brief {
+  padding-bottom: clamp(78px, 7vw, 112px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(28px, 4vw, 64px);
+}
+
+.case04-brief article {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.case04-brief p {
+  max-width: 360px;
+  margin: 18px 0 0;
+  color: #242424;
+  font-size: clamp(18px, 1.45vw, 23px);
+  line-height: 1.32;
+}
+
+.case04-section {
+  padding-bottom: clamp(70px, 6.5vw, 96px);
+}
+
+.case04-storyboard-section {
+  padding-bottom: clamp(84px, 7vw, 112px);
+}
+
+.case04-section > .stage-label {
+  margin-bottom: 18px;
+}
+
+.case04-section > div:not(.stage-label):not(.case-media-grid):not(.case-wide-media) p,
+.case04-breakdown p {
+  max-width: 680px;
+  margin: 0 0 clamp(26px, 3vw, 40px);
+  color: #2f2f2f;
+  font-size: clamp(18px, 1.45vw, 23px);
+  line-height: 1.42;
 }
 
 .case-media-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  padding-bottom: 58px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .case-media-grid.two-up {
@@ -56,15 +83,16 @@
 }
 
 .case-wide-media {
-  padding-bottom: 58px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .case-media-grid .media,
 .case-wide-media .media {
   aspect-ratio: 2.1 / 1;
   overflow: hidden;
-  border-radius: 12px;
-  background: #eee;
+  border-radius: 10px;
+  background: #e8e5df;
 }
 
 .case-media-grid img,
@@ -74,30 +102,59 @@
   object-fit: cover;
 }
 
+.storyboard-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1180px;
+  margin-left: 0;
+  gap: 30px;
+}
+
+.storyboard-grid .media {
+  aspect-ratio: .74 / 1;
+}
+
 .production-gain {
-  margin-bottom: 110px;
+  padding-top: clamp(34px, 4vw, 52px);
+  padding-bottom: clamp(88px, 8vw, 120px);
+  border-top: 1px solid var(--line);
+}
+
+.production-gain h2 {
+  margin: 14px 0 0;
+  max-width: 860px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(40px, 4.8vw, 82px);
+  line-height: .95;
+  letter-spacing: -.055em;
+}
+
+.production-gain p {
+  max-width: 560px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.5;
 }
 
 @media (max-width: 1060px) {
-  .case-copy-block,
-  .case-method,
-  .production-gain {
+  .case04-brief,
+  .case-media-grid,
+  .case-media-grid.two-up,
+  .storyboard-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
   }
 
-  .case-media-grid,
-  .case-media-grid.two-up {
-    grid-template-columns: 1fr;
+  .storyboard-grid {
+    max-width: 680px;
   }
 }
 
 @media (max-width: 720px) {
-  .case-copy-block,
-  .case-method,
-  .production-gain,
-  .case-media-grid,
-  .case-wide-media {
+  .case04-statement,
+  .case04-brief,
+  .case04-section,
+  .production-gain {
     padding-left: 24px;
     padding-right: 24px;
   }

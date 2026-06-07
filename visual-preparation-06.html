@@ -6,7 +6,7 @@
   <title>Invisible AI as a production solution — Visual Preparation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="case-page">
+<body class="case-page case-standard">
   <header class="site-nav">
     <a class="brand" href="index.html">Antoine Gueugneau</a>
     <nav class="nav-links" aria-label="Main navigation">
@@ -17,31 +17,104 @@
       <a href="index.html#contact">Contact</a>
     </nav>
   </header>
+
   <main>
     <section class="case-hero">
       <a class="back" href="visual-preparation.html">Back to Visual Preparation</a>
       <h1>Invisible AI as a production solution</h1>
       <div class="case-subtitle">Long-lens secondary element</div>
     </section>
-    <section class="case-image"><div class="media"><img src="assets/visual_preparation/06-invisible-ai-production-solution.jpg" alt="Invisible AI as a production solution" /></div></section>
-    <section class="case-sequence">
-      <article class="stage">
-        <div class="stage-label">01 / Method</div>
-        <h3>AI element → long-lens integration → lighter production</h3>
-        <p>A short visual preparation path connecting intent, production reality and a clear image reference.</p>
+
+    <section class="case-image">
+      <div class="media">
+        <video poster="assets/visual_preparation/case06-invisible-ai-production-solution/06-invisible-ai-production-solution-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Invisible AI production solution reference">
+          <source src="assets/visual_preparation/case06-invisible-ai-production-solution/06-invisible-ai-production-solution.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <button class="button case-play-button" type="button" data-case-video="assets/visual_preparation/case06-invisible-ai-production-solution/06-invisible-ai-production-solution.mp4">PLAY</button>
+    </section>
+
+    <section class="case-statement">
+      <h2>AI used invisibly to reduce logistics while preserving the viewer's focus.</h2>
+    </section>
+
+    <section class="case-brief" aria-label="Case 06 production value">
+      <article>
+        <div class="stage-label">Challenge</div>
+        <p>Could a secondary background element be created without increasing production logistics?</p>
       </article>
-      <article class="stage">
-        <div class="stage-label">02 / Production value</div>
-        <h3>Why it helps</h3>
-        <p>Use AI invisibly, reduce logistics and preserve the viewer’s focus hierarchy.</p>
+      <article>
+        <div class="stage-label">AI visual preparation</div>
+        <p>The AI element is kept distant, soft and secondary, integrated through long-lens focus hierarchy.</p>
       </article>
-      <article class="stage">
-        <div class="stage-label">03 / Next validation</div>
-        <h3>Images to define</h3>
-        <p>Starting point, exploration image and final result will be locked case by case with Antoine.</p>
+      <article>
+        <div class="stage-label">Production gain</div>
+        <p>Reduced logistics. Preserved realism. No distraction from the actor or scene.</p>
       </article>
     </section>
-    <div class="case-download"><div class="buttons"><a class="button" href="assets/pdf/Antoine_Gueugneau_Visual_Preparation_EN_V3.pdf" download>Download full PDF</a></div></div>
+
+    <section class="case-process" aria-labelledby="case06-process-title">
+      <div class="case-process-heading">
+        <h2 id="case06-process-title" class="stage-label">AI visual preparation process</h2>
+      </div>
+      <div class="case-process-grid">
+        <article>
+          <div class="media"><img src="assets/visual_preparation/case06-invisible-ai-production-solution/06-animal-design-approved-muddy-dog-2-1.jpg" alt="Director-approved muddy dog design reference" /></div>
+          <div class="stage-label">Animal design</div>
+          <h3>Believable secondary presence</h3>
+          <p>Dirty, exhausted and non-stylized, designed to stay inside the scene.</p>
+        </article>
+        <article>
+          <div class="media"><img src="assets/visual_preparation/case06-invisible-ai-production-solution/06-animal-design-validation-strip.jpg" alt="Animal design validation strip" /></div>
+          <div class="stage-label">Validation</div>
+          <h3>Director-approved restraint</h3>
+          <p>The animal remains a soft-focus production element, not a visual demonstration.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-final-gain">
+      <div class="stage-label">Final production gain</div>
+      <h2>Keep attention on the performance, not the fix.</h2>
+      <p>The intervention protects the shot's intention while reducing the need for additional animal logistics.</p>
+    </section>
+
   </main>
+  <div class="video-modal" id="caseVideoModal" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Case video">
+    <div class="modal-inner">
+      <button class="modal-close" type="button" data-close-case-video aria-label="Close video">Close</button>
+      <div class="modal-frame" id="caseVideoFrame"></div>
+    </div>
+  </div>
+  <script>
+    const caseModal = document.getElementById('caseVideoModal');
+    const caseFrame = document.getElementById('caseVideoFrame');
+    let caseLastFocus = null;
+    function openCaseVideo(url) {
+      caseLastFocus = document.activeElement;
+      caseFrame.innerHTML = '<video src="' + url + '" controls autoplay playsinline></video>';
+      caseModal.classList.add('open');
+      caseModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      document.querySelector('[data-close-case-video]').focus();
+    }
+    function closeCaseVideo() {
+      caseModal.classList.remove('open');
+      caseModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      caseFrame.innerHTML = '';
+      if (caseLastFocus) caseLastFocus.focus();
+    }
+    document.querySelectorAll('[data-case-video]').forEach(el => {
+      el.addEventListener('click', () => openCaseVideo(el.getAttribute('data-case-video')));
+    });
+    document.querySelectorAll('[data-close-case-video]').forEach(el => el.addEventListener('click', closeCaseVideo));
+    caseModal.addEventListener('click', (event) => {
+      if (event.target === caseModal) closeCaseVideo();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && caseModal.classList.contains('open')) closeCaseVideo();
+    });
+  </script>
 </body>
 </html>

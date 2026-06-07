@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Montpellier tram / rain study — Visual Preparation</title>
+  <title>Set transformation previsualization — Visual Preparation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="case-page">
+<body class="case-page case-standard">
   <header class="site-nav">
     <a class="brand" href="index.html">Antoine Gueugneau</a>
     <nav class="nav-links" aria-label="Main navigation">
@@ -17,31 +17,118 @@
       <a href="index.html#contact">Contact</a>
     </nav>
   </header>
+
   <main>
     <section class="case-hero">
       <a class="back" href="visual-preparation.html">Back to Visual Preparation</a>
-      <h1>Montpellier tram / rain study</h1>
-      <div class="case-subtitle">Urban atmosphere / Reflections</div>
+      <h1>Set transformation previsualization</h1>
+      <div class="case-subtitle">Character continuity / VFX alignment</div>
     </section>
-    <section class="case-image"><div class="media"><img src="assets/visual_preparation/07-montpellier-tram-rain-study.jpg" alt="Montpellier tram / rain study" /></div></section>
-    <section class="case-sequence">
-      <article class="stage">
-        <div class="stage-label">01 / Method</div>
-        <h3>Urban setting → weather study → atmosphere reference</h3>
-        <p>A short visual preparation path connecting intent, production reality and a clear image reference.</p>
+
+    <section class="case-image">
+      <div class="media">
+        <video poster="assets/visual_preparation/case07-set-transformation-previsualization/07-set-transformation-hero-2-1.jpg" muted loop playsinline preload="metadata" controls aria-label="Set transformation travelling validation video">
+          <source src="assets/visual_preparation/case07-set-transformation-previsualization/07-set-transformation-office-validation.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <button class="button case-play-button" type="button" data-case-video="assets/visual_preparation/case07-set-transformation-previsualization/07-set-transformation-office-validation.mp4">PLAY</button>
+    </section>
+
+    <section class="case-statement">
+      <h2>Previsualized camera movement and environment transformation before postproduction.</h2>
+    </section>
+
+    <section class="case-brief" aria-label="Case 07 production value">
+      <article>
+        <div class="stage-label">Challenge</div>
+        <p>Could camera movement, set transformation and continuity be validated before the shoot?</p>
       </article>
-      <article class="stage">
-        <div class="stage-label">02 / Production value</div>
-        <h3>Why it helps</h3>
-        <p>Explore atmosphere, rain and reflections before fixing the practical shooting approach.</p>
+      <article>
+        <div class="stage-label">Visual preparation</div>
+        <p>Validated environments help align camera language, art direction, character continuity and VFX targets.</p>
       </article>
-      <article class="stage">
-        <div class="stage-label">03 / Next validation</div>
-        <h3>Images to define</h3>
-        <p>Starting point, exploration image and final result will be locked case by case with Antoine.</p>
+      <article>
+        <div class="stage-label">Production gain</div>
+        <p>Clearer communication with VFX. Earlier art direction validation. Less back-and-forth in postproduction.</p>
       </article>
     </section>
-    <div class="case-download"><div class="buttons"><a class="button" href="assets/pdf/Antoine_Gueugneau_Visual_Preparation_EN_V3.pdf" download>Download full PDF</a></div></div>
+
+    <section class="case-process" aria-labelledby="case07-process-title">
+      <div class="case-process-heading">
+        <h2 id="case07-process-title" class="stage-label">Visual preparation process</h2>
+      </div>
+      <div class="case-process-grid">
+        <article>
+          <div class="media"><img src="assets/visual_preparation/case07-set-transformation-previsualization/07-set-transformation-starting-point-green-screen.jpg" alt="Neutral greenscreen starting point for set transformation" /></div>
+          <div class="stage-label">Starting point</div>
+          <h3>Live-action base</h3>
+          <p>Framing, actor placement and camera movement are defined first.</p>
+        </article>
+        <article>
+          <div class="media"><img src="assets/visual_preparation/case07-set-transformation-previsualization/07-set-transformation-courtroom-result.jpg" alt="Validated courtroom environment previsualization" /></div>
+          <div class="stage-label">Environment 01</div>
+          <h3>Courtroom continuity</h3>
+          <p>The same character is tested inside a validated courtroom direction.</p>
+        </article>
+        <article>
+          <div class="media"><img src="assets/visual_preparation/case07-set-transformation-previsualization/07-set-transformation-car-result.jpg" alt="Validated car interior environment previsualization" /></div>
+          <div class="stage-label">Environment 02</div>
+          <h3>Car interior continuity</h3>
+          <p>The character carries into a new environment with the same visual intention.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-image">
+      <div class="media">
+        <video poster="assets/visual_preparation/case07-set-transformation-previsualization/07-set-transformation-tribunal-car-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Courtroom and car continuity validation video">
+          <source src="assets/visual_preparation/case07-set-transformation-previsualization/07-set-transformation-tribunal-car-director-validation.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+
+    <section class="case-final-gain">
+      <div class="stage-label">Final production gain</div>
+      <h2>Validate continuity, camera movement and VFX targets before post.</h2>
+      <p>The director, cinematographer and VFX supervisor share a clearer reference before final execution.</p>
+    </section>
+
   </main>
+  <div class="video-modal" id="caseVideoModal" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Case video">
+    <div class="modal-inner">
+      <button class="modal-close" type="button" data-close-case-video aria-label="Close video">Close</button>
+      <div class="modal-frame" id="caseVideoFrame"></div>
+    </div>
+  </div>
+  <script>
+    const caseModal = document.getElementById('caseVideoModal');
+    const caseFrame = document.getElementById('caseVideoFrame');
+    let caseLastFocus = null;
+    function openCaseVideo(url) {
+      caseLastFocus = document.activeElement;
+      caseFrame.innerHTML = '<video src="' + url + '" controls autoplay playsinline></video>';
+      caseModal.classList.add('open');
+      caseModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      document.querySelector('[data-close-case-video]').focus();
+    }
+    function closeCaseVideo() {
+      caseModal.classList.remove('open');
+      caseModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      caseFrame.innerHTML = '';
+      if (caseLastFocus) caseLastFocus.focus();
+    }
+    document.querySelectorAll('[data-case-video]').forEach(el => {
+      el.addEventListener('click', () => openCaseVideo(el.getAttribute('data-case-video')));
+    });
+    document.querySelectorAll('[data-close-case-video]').forEach(el => el.addEventListener('click', closeCaseVideo));
+    caseModal.addEventListener('click', (event) => {
+      if (event.target === caseModal) closeCaseVideo();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && caseModal.classList.contains('open')) closeCaseVideo();
+    });
+  </script>
 </body>
 </html>
