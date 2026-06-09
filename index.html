@@ -32,9 +32,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-nav">
+  <header class="site-nav mobile-menu-nav">
     <a class="brand" href="index.html">Antoine Gueugneau</a>
-    <nav class="nav-links" aria-label="Main navigation">
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="nav-links" id="mainNav" aria-label="Main navigation">
       <a href="#work">Work</a>
       <a href="#showreel">Showreel</a>
       <a href="visual-preparation.html">Visual Preparation</a>
@@ -200,6 +201,24 @@
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') closeVideo();
     });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.getElementById('mainNav');
+    if (menuToggle && mainNav) {
+      function closeMenu() {
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+      menuToggle.addEventListener('click', () => {
+        const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeMenu();
+      });
+    }
   </script>
 
 </body>
